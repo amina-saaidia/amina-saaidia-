@@ -1,11 +1,6 @@
 <p align="center">
-  <img
-    src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-USERNAME/main/header.svg"
-    width="100%"
-    alt="Amina Saaidia — Process Engineering · Applied AI"
-  />
+  <img src="./header.svg" width="100%">
 </p>
-
 ### Hi, I'm Amina 👋
 
 Process Engineering graduate → M1 in Refining, building Python and AI skills to apply to industrial process problems: predictive maintenance, anomaly detection, and process optimization.
