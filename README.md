@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a2a4a,100:2c6e75&height=180&section=header&text=Amina%20Saaidia&fontSize=42&fontColor=ffffff&fontAlignY=40&desc=Process%20Engineering%20%C2%B7%20Applied%20AI&descSize=18&descAlignY=62" />
+  <img src="./header.svg" width="100%" alt="Amina Saaidia — Process Engineering · Applied AI">
 </p>
 
 ### Hi, I'm Amina 👋
