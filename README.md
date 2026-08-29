@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="./header.svg" width="100%" alt="Amina Saaidia — Process Engineering · Applied AI">
+  <img
+    src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-USERNAME/main/header.svg"
+    width="100%"
+    alt="Amina Saaidia — Process Engineering · Applied AI"
+  />
 </p>
 
 ### Hi, I'm Amina 👋
