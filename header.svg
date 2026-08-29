@@ -1,319 +1,235 @@
-<svg width="1200" height="260" viewBox="0 0 1200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="220" viewBox="0 0 1200 220"
+     xmlns="http://www.w3.org/2000/svg">
 
   <defs>
 
-    <!-- Background -->
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="260" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#030712"/>
-      <stop offset="0.45" stop-color="#071438"/>
-      <stop offset="1" stop-color="#020611"/>
+    <!-- Dark reference-style background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="220">
+      <stop offset="0%" stop-color="#030711"/>
+      <stop offset="45%" stop-color="#081542"/>
+      <stop offset="100%" stop-color="#02050D"/>
     </linearGradient>
 
-    <!-- Main blue glow -->
-    <linearGradient id="blueFlow" x1="150" y1="240" x2="1050" y2="20" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#102B91"/>
-      <stop offset="0.42" stop-color="#1769E8"/>
-      <stop offset="0.72" stop-color="#08B9E8"/>
-      <stop offset="1" stop-color="#5B7CFF"/>
+    <!-- Blue / cyan / violet -->
+    <linearGradient id="line" x1="0" y1="0" x2="1200" y2="0">
+      <stop offset="0%" stop-color="#1836B8"/>
+      <stop offset="35%" stop-color="#147BFF"/>
+      <stop offset="65%" stop-color="#16CFFF"/>
+      <stop offset="82%" stop-color="#8B7CFF"/>
+      <stop offset="100%" stop-color="#1769E8"/>
     </linearGradient>
 
-    <!-- Violet highlight -->
-    <linearGradient id="violetFlow" x1="250" y1="30" x2="1000" y2="220" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#315DFF"/>
-      <stop offset="0.5" stop-color="#8C7CFF"/>
-      <stop offset="1" stop-color="#42D9FF"/>
-    </linearGradient>
-
-    <!-- Soft blue glow -->
-    <radialGradient id="blueGlow" cx="0" cy="0" r="1"
-      gradientUnits="userSpaceOnUse"
-      gradientTransform="translate(875 100) rotate(150) scale(430 180)">
-      <stop stop-color="#1769E8" stop-opacity="0.55"/>
-      <stop offset="0.5" stop-color="#123FC0" stop-opacity="0.25"/>
-      <stop offset="1" stop-color="#06112D" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Violet glow -->
-    <radialGradient id="violetGlow" cx="0" cy="0" r="1"
-      gradientUnits="userSpaceOnUse"
-      gradientTransform="translate(300 35) rotate(20) scale(300 90)">
-      <stop stop-color="#8C72FF" stop-opacity="0.45"/>
-      <stop offset="1" stop-color="#8C72FF" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Cyan glow -->
-    <radialGradient id="cyanGlow" cx="0" cy="0" r="1"
-      gradientUnits="userSpaceOnUse"
-      gradientTransform="translate(820 205) rotate(-20) scale(260 80)">
-      <stop stop-color="#35D9FF" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#35D9FF" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Blur effects -->
-    <filter id="blur40" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="40"/>
+    <!-- Soft glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="7"/>
     </filter>
 
-    <filter id="blur20" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="20"/>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="18"/>
     </filter>
-
-    <filter id="blur10" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="10"/>
-    </filter>
-
-    <!-- Text glow -->
-    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5"/>
-    </filter>
-
-    <!-- Main orbital shape -->
-    <linearGradient id="orbital" x1="250" y1="240" x2="1000" y2="20" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0C2A91"/>
-      <stop offset="0.35" stop-color="#1265E8"/>
-      <stop offset="0.65" stop-color="#22CFFF"/>
-      <stop offset="0.82" stop-color="#7C7CFF"/>
-      <stop offset="1" stop-color="#2E64FF"/>
-    </linearGradient>
 
   </defs>
 
 
-  <!-- ===================================================== -->
   <!-- BACKGROUND -->
-  <!-- ===================================================== -->
 
-  <rect width="1200" height="260" fill="url(#bg)"/>
-
-  <!-- Atmospheric glows -->
-  <ellipse
-    cx="850"
-    cy="105"
-    rx="430"
-    ry="180"
-    fill="url(#blueGlow)"
-    filter="url(#blur40)"
-  />
-
-  <ellipse
-    cx="310"
-    cy="35"
-    rx="300"
-    ry="75"
-    fill="url(#violetGlow)"
-    filter="url(#blur40)"
-  />
-
-  <ellipse
-    cx="850"
-    cy="220"
-    rx="250"
-    ry="75"
-    fill="url(#cyanGlow)"
-    filter="url(#blur40)"
-  />
+  <rect width="1200" height="220" fill="url(#bg)"/>
 
 
-  <!-- ===================================================== -->
-  <!-- SOFT BACKGROUND LIGHT -->
-  <!-- ===================================================== -->
+  <!-- SOFT BLUE ATMOSPHERE -->
 
-  <path
-    d="M -80 40
-       C 160 -20, 290 -5, 430 45
-       C 560 92, 680 105, 820 55"
-    stroke="#315DFF"
-    stroke-width="35"
-    stroke-linecap="round"
-    opacity="0.13"
-    filter="url(#blur20)"
-  />
+  <ellipse cx="850" cy="100"
+           rx="330" ry="110"
+           fill="#1265E8"
+           opacity="0.12"
+           filter="url(#softGlow)">
 
-  <path
-    d="M 600 245
-       C 730 185, 840 165, 1010 180
-       C 1100 188, 1170 165, 1260 130"
-    stroke="#8C7CFF"
-    stroke-width="32"
-    stroke-linecap="round"
-    opacity="0.12"
-    filter="url(#blur20)"
-  />
+    <animate
+      attributeName="cx"
+      values="780;850;920;850;780"
+      dur="10s"
+      repeatCount="indefinite"/>
+  </ellipse>
 
 
-  <!-- ===================================================== -->
+  <!-- ================================================= -->
   <!-- LARGE ORBITAL CURVE -->
-  <!-- ===================================================== -->
+  <!-- ================================================= -->
 
-  <!-- glow behind the main curve -->
-  <path
-    d="M 185 300
-       C 160 205, 205 105, 300 48
-       C 410 -20, 560 -12, 685 42
-       C 790 88, 850 115, 930 104"
-    stroke="#146BFF"
-    stroke-width="42"
-    stroke-linecap="round"
-    opacity="0.16"
-    filter="url(#blur20)"
-  />
+  <!-- glow -->
 
-  <!-- main luminous curve -->
   <path
-    d="M 185 300
-       C 160 205, 205 105, 300 48
-       C 410 -20, 560 -12, 685 42
-       C 790 88, 850 115, 930 104"
-    stroke="url(#orbital)"
-    stroke-width="9"
-    stroke-linecap="round"
-    opacity="0.95"
-  />
+    d="M80 250
+       C80 80 220 10 390 35
+       C560 60 650 155 820 155
+       C970 155 1080 85 1220 20"
+    fill="none"
+    stroke="#1769FF"
+    stroke-width="18"
+    opacity="0.18"
+    filter="url(#glow)">
 
-  <!-- thin bright edge -->
+    <animate
+      attributeName="d"
+      dur="8s"
+      repeatCount="indefinite"
+      values="
+      M80 250 C80 80 220 10 390 35 C560 60 650 155 820 155 C970 155 1080 85 1220 20;
+      M80 250 C80 90 220 25 390 50 C560 75 650 135 820 140 C970 145 1080 105 1220 35;
+      M80 250 C80 80 220 10 390 35 C560 60 650 155 820 155 C970 155 1080 85 1220 20"/>
+  </path>
+
+
+  <!-- bright edge -->
+
   <path
-    d="M 185 300
-       C 160 205, 205 105, 300 48
-       C 410 -20, 560 -12, 685 42
-       C 790 88, 850 115, 930 104"
-    stroke="#A9F3FF"
+    d="M80 250
+       C80 80 220 10 390 35
+       C560 60 650 155 820 155
+       C970 155 1080 85 1220 20"
+    fill="none"
+    stroke="url(#line)"
+    stroke-width="5"
+    stroke-linecap="round">
+
+    <animate
+      attributeName="d"
+      dur="8s"
+      repeatCount="indefinite"
+      values="
+      M80 250 C80 80 220 10 390 35 C560 60 650 155 820 155 C970 155 1080 85 1220 20;
+      M80 250 C80 90 220 25 390 50 C560 75 650 135 820 140 C970 145 1080 105 1220 35;
+      M80 250 C80 80 220 10 390 35 C560 60 650 155 820 155 C970 155 1080 85 1220 20"/>
+  </path>
+
+
+  <!-- ================================================= -->
+  <!-- MIDDLE WAVING LIGHT LINES -->
+  <!-- ================================================= -->
+
+  <!-- Line 1 -->
+
+  <path
+    d="M0 105
+       C130 70 200 135 330 105
+       C460 75 520 75 650 110
+       C780 145 850 130 980 95
+       C1080 70 1140 80 1200 105"
+    fill="none"
+    stroke="url(#line)"
     stroke-width="2"
-    stroke-linecap="round"
-    opacity="0.85"
-  />
+    opacity="0.8">
+
+    <animate
+      attributeName="d"
+      dur="6s"
+      repeatCount="indefinite"
+      values="
+      M0 105 C130 70 200 135 330 105 C460 75 520 75 650 110 C780 145 850 130 980 95 C1080 70 1140 80 1200 105;
+      M0 105 C130 135 200 75 330 110 C460 145 520 130 650 95 C780 70 850 80 980 105 C1080 135 1140 75 1200 105;
+      M0 105 C130 70 200 135 330 105 C460 75 520 75 650 110 C780 145 850 130 980 95 C1080 70 1140 80 1200 105"/>
+  </path>
 
 
-  <!-- ===================================================== -->
-  <!-- INNER FLOWING CURVE -->
-  <!-- ===================================================== -->
-
-  <path
-    d="M 520 280
-       C 555 220, 610 178, 690 158
-       C 770 138, 835 145, 905 174
-       C 1000 214, 1090 210, 1220 145"
-    stroke="#1769E8"
-    stroke-width="48"
-    stroke-linecap="round"
-    opacity="0.15"
-    filter="url(#blur20)"
-  />
+  <!-- Line 2 -->
 
   <path
-    d="M 520 280
-       C 555 220, 610 178, 690 158
-       C 770 138, 835 145, 905 174
-       C 1000 214, 1090 210, 1220 145"
-    stroke="url(#violetFlow)"
-    stroke-width="10"
-    stroke-linecap="round"
-    opacity="0.9"
-  />
+    d="M0 125
+       C140 155 220 90 350 125
+       C480 160 550 155 680 120
+       C810 85 900 95 1020 125
+       C1100 145 1150 135 1200 115"
+    fill="none"
+    stroke="#168BFF"
+    stroke-width="1.5"
+    opacity="0.65">
+
+    <animate
+      attributeName="d"
+      dur="7s"
+      repeatCount="indefinite"
+      values="
+      M0 125 C140 155 220 90 350 125 C480 160 550 155 680 120 C810 85 900 95 1020 125 C1100 145 1150 135 1200 115;
+      M0 125 C140 90 220 155 350 120 C480 85 550 95 680 125 C810 145 900 135 1020 115 C1100 90 1150 155 1200 125;
+      M0 125 C140 155 220 90 350 125 C480 160 550 155 680 120 C810 85 900 95 1020 125 C1100 145 1150 135 1200 115"/>
+  </path>
+
+
+  <!-- Line 3 -->
 
   <path
-    d="M 520 280
-       C 555 220, 610 178, 690 158
-       C 770 138, 835 145, 905 174
-       C 1000 214, 1090 210, 1220 145"
-    stroke="#D4FAFF"
-    stroke-width="2"
-    stroke-linecap="round"
-    opacity="0.8"
-  />
+    d="M0 145
+       C120 115 210 170 330 140
+       C450 110 550 110 670 145
+       C790 180 890 160 1000 130
+       C1100 105 1150 120 1200 140"
+    fill="none"
+    stroke="#756CFF"
+    stroke-width="1.5"
+    opacity="0.6">
+
+    <animate
+      attributeName="d"
+      dur="9s"
+      repeatCount="indefinite"
+      values="
+      M0 145 C120 115 210 170 330 140 C450 110 550 110 670 145 C790 180 890 160 1000 130 C1100 105 1150 120 1200 140;
+      M0 145 C120 175 210 110 330 150 C450 180 550 160 670 125 C790 95 890 120 1000 150 C1100 175 1150 110 1200 145;
+      M0 145 C120 115 210 170 330 140 C450 110 550 110 670 145 C790 180 890 160 1000 130 C1100 105 1150 120 1200 140"/>
+  </path>
 
 
-  <!-- ===================================================== -->
-  <!-- CENTRAL BLUE LIGHT -->
-  <!-- ===================================================== -->
+  <!-- ================================================= -->
+  <!-- MOVING LIGHT POINTS -->
+  <!-- ================================================= -->
 
-  <ellipse
-    cx="720"
-    cy="112"
-    rx="135"
-    ry="75"
-    fill="#087BFF"
-    opacity="0.14"
-    filter="url(#blur20)"
-  />
+  <circle r="3" fill="#7DEBFF">
 
-  <ellipse
-    cx="720"
-    cy="112"
-    rx="55"
-    ry="32"
-    fill="#35D9FF"
-    opacity="0.16"
-    filter="url(#blur10)"
-  />
+    <animateMotion
+      dur="5s"
+      repeatCount="indefinite"
+      path="M0 105 C130 70 200 135 330 105 C460 75 520 75 650 110 C780 145 850 130 980 95 C1080 70 1140 80 1200 105"/>
+  </circle>
+
+  <circle r="2.5" fill="#8C7CFF">
+
+    <animateMotion
+      dur="7s"
+      repeatCount="indefinite"
+      path="M1200 125 C1100 145 1150 135 1020 125 C900 95 810 85 680 120 C550 155 480 160 350 125 C220 90 140 155 0 125"/>
+  </circle>
 
 
-  <!-- ===================================================== -->
-  <!-- SUBTLE TECHNICAL PARTICLES -->
-  <!-- ===================================================== -->
-
-  <circle cx="1010" cy="56" r="2" fill="#8BDFFF" opacity="0.7"/>
-  <circle cx="1050" cy="82" r="1.5" fill="#587DFF" opacity="0.6"/>
-  <circle cx="1100" cy="52" r="1" fill="#A59AFF" opacity="0.6"/>
-  <circle cx="930" cy="35" r="1.5" fill="#6DE8FF" opacity="0.5"/>
-  <circle cx="1130" cy="190" r="1.5" fill="#4E8CFF" opacity="0.5"/>
-  <circle cx="980" cy="225" r="1" fill="#8C7CFF" opacity="0.6"/>
-
-
-  <!-- ===================================================== -->
+  <!-- ================================================= -->
   <!-- TEXT -->
-  <!-- ===================================================== -->
+  <!-- ================================================= -->
 
-  <!-- subtle text glow -->
   <text
-    x="92"
-    y="108"
-    fill="#4DA9FF"
-    opacity="0.25"
-    filter="url(#textGlow)"
+    x="75"
+    y="92"
+    fill="white"
     font-family="Arial, Helvetica, sans-serif"
     font-size="38"
-    font-weight="600"
-    letter-spacing="0.5"
-  >
+    font-weight="600">
     Amina Saaidia
   </text>
 
-  <!-- main name -->
   <text
-    x="92"
-    y="108"
-    fill="#FFFFFF"
+    x="78"
+    y="120"
+    fill="#BFD3FF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="38"
-    font-weight="600"
-    letter-spacing="0.5"
-  >
-    Amina Saaidia
+    font-size="15"
+    letter-spacing="1.2">
+    PROCESS ENGINEERING · APPLIED AI
   </text>
 
-  <!-- subtitle -->
-  <text
-    x="94"
-    y="138"
-    fill="#B8CCFF"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="16"
-    font-weight="400"
-    letter-spacing="1"
-  >
-    PROCESS ENGINEERING  ·  APPLIED AI
-  </text>
-
-
-  <!-- small accent line -->
   <rect
-    x="94"
-    y="154"
+    x="78"
+    y="137"
     width="55"
     height="2"
     rx="1"
-    fill="#27CFFF"
-    opacity="0.85"
-  />
+    fill="#19D5FF"/>
 
 </svg>
