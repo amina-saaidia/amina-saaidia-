@@ -1,232 +1,600 @@
-<svg width="1200" height="220" viewBox="0 0 1200 220"
-     xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="260"
+     viewBox="0 0 1200 260">
 
   <defs>
 
-    <!-- Dark reference-style background -->
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="220">
-      <stop offset="0%" stop-color="#030711"/>
-      <stop offset="45%" stop-color="#081542"/>
+    <!-- BACKGROUND -->
+    <linearGradient id="background"
+                    x1="0" y1="0"
+                    x2="1200" y2="260">
+      <stop offset="0%" stop-color="#02050D"/>
+      <stop offset="35%" stop-color="#071438"/>
+      <stop offset="65%" stop-color="#0B1745"/>
       <stop offset="100%" stop-color="#02050D"/>
     </linearGradient>
 
-    <!-- Blue / cyan / violet -->
-    <linearGradient id="line" x1="0" y1="0" x2="1200" y2="0">
-      <stop offset="0%" stop-color="#1836B8"/>
-      <stop offset="35%" stop-color="#147BFF"/>
-      <stop offset="65%" stop-color="#16CFFF"/>
-      <stop offset="82%" stop-color="#8B7CFF"/>
-      <stop offset="100%" stop-color="#1769E8"/>
+    <radialGradient id="blueAtmosphere"
+                    cx="70%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#1769E8" stop-opacity="0.28"/>
+      <stop offset="45%" stop-color="#123CA8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#02050D" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="violetAtmosphere"
+                    cx="20%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#756CFF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#756CFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="cyanAtmosphere"
+                    cx="75%" cy="85%" r="50%">
+      <stop offset="0%" stop-color="#19D5FF" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#19D5FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="blueLine"
+                    x1="0%" y1="0%"
+                    x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1837B8"/>
+      <stop offset="40%" stop-color="#147BFF"/>
+      <stop offset="72%" stop-color="#19D5FF"/>
+      <stop offset="100%" stop-color="#756CFF"/>
     </linearGradient>
 
-    <!-- Soft glow -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="7"/>
+    <linearGradient id="refineryFade"
+                    x1="0" y1="0"
+                    x2="0" y2="1">
+      <stop offset="0%" stop-color="#01050D" stop-opacity="0.88"/>
+      <stop offset="38%" stop-color="#030914" stop-opacity="0.78"/>
+      <stop offset="72%" stop-color="#071125" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#071438" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- SUBTLE BALL GLOW -->
+    <filter id="smallBallGlow"
+            x="-200%" y="-200%"
+            width="400%" height="400%">
+      <feGaussianBlur stdDeviation="2.2"/>
     </filter>
 
-    <filter id="softGlow">
+    <filter id="largeGlow"
+            x="-50%" y="-50%"
+            width="200%" height="200%">
       <feGaussianBlur stdDeviation="18"/>
+    </filter>
+
+    <filter id="lineGlow"
+            x="-50%" y="-50%"
+            width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5"/>
     </filter>
 
   </defs>
 
 
+  <!-- ============================================== -->
   <!-- BACKGROUND -->
+  <!-- ============================================== -->
 
-  <rect width="1200" height="220" fill="url(#bg)"/>
+  <rect width="1200"
+        height="260"
+        fill="url(#background)"/>
+
+  <rect width="1200"
+        height="260"
+        fill="url(#blueAtmosphere)"/>
+
+  <rect width="1200"
+        height="260"
+        fill="url(#violetAtmosphere)"/>
+
+  <rect width="1200"
+        height="260"
+        fill="url(#cyanAtmosphere)"/>
 
 
-  <!-- SOFT BLUE ATMOSPHERE -->
+  <!-- ============================================== -->
+  <!-- ATMOSPHERIC GLOW -->
+  <!-- ============================================== -->
 
-  <ellipse cx="850" cy="100"
-           rx="330" ry="110"
-           fill="#1265E8"
-           opacity="0.12"
-           filter="url(#softGlow)">
+  <ellipse cx="850"
+           cy="90"
+           rx="330"
+           ry="130"
+           fill="#1769E8"
+           opacity="0.08"
+           filter="url(#largeGlow)">
 
     <animate
       attributeName="cx"
-      values="780;850;920;850;780"
-      dur="10s"
+      values="760;850;940;850;760"
+      dur="12s"
       repeatCount="indefinite"/>
+
   </ellipse>
 
 
-  <!-- ================================================= -->
-  <!-- LARGE ORBITAL CURVE -->
-  <!-- ================================================= -->
-
-  <!-- glow -->
-
-  <path
-    d="M80 250
-       C80 80 220 10 390 35
-       C560 60 650 155 820 155
-       C970 155 1080 85 1220 20"
-    fill="none"
-    stroke="#1769FF"
-    stroke-width="18"
-    opacity="0.18"
-    filter="url(#glow)">
+  <ellipse cx="260"
+           cy="50"
+           rx="230"
+           ry="75"
+           fill="#756CFF"
+           opacity="0.07"
+           filter="url(#largeGlow)">
 
     <animate
-      attributeName="d"
-      dur="8s"
-      repeatCount="indefinite"
-      values="
-      M80 250 C80 80 220 10 390 35 C560 60 650 155 820 155 C970 155 1080 85 1220 20;
-      M80 250 C80 90 220 25 390 50 C560 75 650 135 820 140 C970 145 1080 105 1220 35;
-      M80 250 C80 80 220 10 390 35 C560 60 650 155 820 155 C970 155 1080 85 1220 20"/>
-  </path>
+      attributeName="cx"
+      values="220;300;220"
+      dur="11s"
+      repeatCount="indefinite"/>
+
+  </ellipse>
 
 
-  <!-- bright edge -->
-
-  <path
-    d="M80 250
-       C80 80 220 10 390 35
-       C560 60 650 155 820 155
-       C970 155 1080 85 1220 20"
-    fill="none"
-    stroke="url(#line)"
-    stroke-width="5"
-    stroke-linecap="round">
-
-    <animate
-      attributeName="d"
-      dur="8s"
-      repeatCount="indefinite"
-      values="
-      M80 250 C80 80 220 10 390 35 C560 60 650 155 820 155 C970 155 1080 85 1220 20;
-      M80 250 C80 90 220 25 390 50 C560 75 650 135 820 140 C970 145 1080 105 1220 35;
-      M80 250 C80 80 220 10 390 35 C560 60 650 155 820 155 C970 155 1080 85 1220 20"/>
-  </path>
-
-
-  <!-- ================================================= -->
-  <!-- MIDDLE WAVING LIGHT LINES -->
-  <!-- ================================================= -->
-
-  <!-- Line 1 -->
+  <!-- ============================================== -->
+  <!-- LARGE BLUE CURVE -->
+  <!-- ============================================== -->
 
   <path
-    d="M0 105
-       C130 70 200 135 330 105
-       C460 75 520 75 650 110
-       C780 145 850 130 980 95
-       C1080 70 1140 80 1200 105"
+    d="M40 285
+       C100 150 170 55 315 35
+       C470 12 590 95 690 150
+       C790 205 900 185 1000 105
+       C1080 42 1140 35 1240 20"
     fill="none"
-    stroke="url(#line)"
+    stroke="#147BFF"
+    stroke-width="20"
+    opacity="0.15"
+    filter="url(#lineGlow)"/>
+
+  <path
+    d="M40 285
+       C100 150 170 55 315 35
+       C470 12 590 95 690 150
+       C790 205 900 185 1000 105
+       C1080 42 1140 35 1240 20"
+    fill="none"
+    stroke="url(#blueLine)"
+    stroke-width="4"
+    stroke-linecap="round"/>
+
+
+  <!-- ============================================== -->
+  <!-- THIN CYAN LINE -->
+  <!-- GENTLE OSCILLATION -->
+  <!-- ============================================== -->
+
+  <path
+    d="M-100 205
+       C40 175 150 135 270 145
+       C390 155 450 170 570 155
+       C690 140 770 105 890 115
+       C1010 125 1090 145 1300 90"
+    fill="none"
+    stroke="#19D5FF"
     stroke-width="2"
-    opacity="0.8">
-
-    <animate
-      attributeName="d"
-      dur="6s"
-      repeatCount="indefinite"
-      values="
-      M0 105 C130 70 200 135 330 105 C460 75 520 75 650 110 C780 145 850 130 980 95 C1080 70 1140 80 1200 105;
-      M0 105 C130 135 200 75 330 110 C460 145 520 130 650 95 C780 70 850 80 980 105 C1080 135 1140 75 1200 105;
-      M0 105 C130 70 200 135 330 105 C460 75 520 75 650 110 C780 145 850 130 980 95 C1080 70 1140 80 1200 105"/>
-  </path>
-
-
-  <!-- Line 2 -->
-
-  <path
-    d="M0 125
-       C140 155 220 90 350 125
-       C480 160 550 155 680 120
-       C810 85 900 95 1020 125
-       C1100 145 1150 135 1200 115"
-    fill="none"
-    stroke="#168BFF"
-    stroke-width="1.5"
-    opacity="0.65">
+    stroke-linecap="round"
+    opacity="0.9">
 
     <animate
       attributeName="d"
       dur="7s"
       repeatCount="indefinite"
+      calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1"
+      keySplines="
+        0.42 0 0.58 1;
+        0.42 0 0.58 1;
+        0.42 0 0.58 1;
+        0.42 0 0.58 1"
       values="
-      M0 125 C140 155 220 90 350 125 C480 160 550 155 680 120 C810 85 900 95 1020 125 C1100 145 1150 135 1200 115;
-      M0 125 C140 90 220 155 350 120 C480 85 550 95 680 125 C810 145 900 135 1020 115 C1100 90 1150 155 1200 125;
-      M0 125 C140 155 220 90 350 125 C480 160 550 155 680 120 C810 85 900 95 1020 125 C1100 145 1150 135 1200 115"/>
+
+      M-100 205
+      C40 175 150 135 270 145
+      C390 155 450 170 570 155
+      C690 140 770 105 890 115
+      C1010 125 1090 145 1300 90;
+
+      M-100 205
+      C40 170 150 140 270 148
+      C390 156 450 164 570 151
+      C690 138 770 112 890 116
+      C1010 120 1090 148 1300 90;
+
+      M-100 205
+      C40 180 150 130 270 142
+      C390 152 450 175 570 160
+      C690 145 770 100 890 118
+      C1010 130 1090 140 1300 90;
+
+      M-100 205
+      C40 172 150 138 270 146
+      C390 154 450 168 570 153
+      C690 138 770 108 890 114
+      C1010 124 1090 147 1300 90;
+
+      M-100 205
+      C40 175 150 135 270 145
+      C390 155 450 170 570 155
+      C690 140 770 105 890 115
+      C1010 125 1090 145 1300 90"/>
+
   </path>
 
 
-  <!-- Line 3 -->
+  <!-- ============================================== -->
+  <!-- REFINERY SILHOUETTE -->
+  <!-- ============================================== -->
+
+  <g fill="url(#refineryFade)"
+     opacity="0.82">
+
+    <path d="
+      M700 260
+      L700 221
+      L715 221
+      L715 210
+      L735 210
+      L735 202
+      L750 202
+      L750 212
+      L765 212
+      L765 260
+
+      L775 260
+      L775 220
+      L790 220
+      L790 207
+      L805 207
+      L805 198
+      L828 198
+      L828 207
+      L845 207
+      L845 220
+      L860 220
+      L860 260
+
+      L875 260
+      L875 154
+      L887 154
+      L887 260
+
+      L900 260
+      L900 205
+      L912 205
+      L912 260
+
+      L925 260
+      L925 219
+      L938 219
+      L938 260
+
+      L950 260
+      L950 147
+
+      C950 141 955 137 961 137
+      L961 128
+
+      C961 120 967 114 975 114
+      C983 114 989 120 989 128
+
+      L989 137
+
+      C995 137 1000 141 1000 147
+      L1000 260
+
+      L1014 260
+      L1014 219
+      L1027 219
+      L1027 205
+      L1040 205
+      L1040 219
+      L1053 219
+      L1053 260
+
+      L1066 260
+      L1066 210
+      L1079 210
+      L1079 260
+
+      L1092 260
+      L1092 218
+      L1105 218
+      L1105 260
+
+      L1118 260
+      L1118 150
+
+      C1118 143 1123 138 1130 138
+      L1130 128
+
+      C1130 120 1136 114 1144 114
+      C1152 114 1158 120 1158 128
+
+      L1158 138
+
+      C1165 138 1170 143 1170 150
+      L1170 260
+      Z"/>
+
+
+    <path d="
+      M715 221
+      L715 22
+      L725 22
+      L725 221
+      Z"/>
+
+
+    <path d="
+      M875 154
+      L875 58
+      L887 58
+      L887 154
+      Z"/>
+
+
+    <path d="
+      M700 221
+      L700 207
+      L715 196
+      L715 221
+      Z"/>
+
+
+    <path d="
+      M900 205
+      L900 191
+      L914 199
+      L914 205
+      Z"/>
+
+  </g>
+
+
+  <!-- ============================================== -->
+  <!-- SECOND THIN LINE -->
+  <!-- SUBTLE CROSSING OSCILLATION -->
+  <!-- ============================================== -->
 
   <path
-    d="M0 145
-       C120 115 210 170 330 140
-       C450 110 550 110 670 145
-       C790 180 890 160 1000 130
-       C1100 105 1150 120 1200 140"
+    d="M-100 220
+       C40 195 150 160 270 165
+       C390 170 450 185 570 170
+       C690 155 770 125 890 130
+       C1010 135 1090 160 1300 105"
     fill="none"
-    stroke="#756CFF"
-    stroke-width="1.5"
-    opacity="0.6">
+    stroke="#147BFF"
+    stroke-width="2"
+    stroke-linecap="round"
+    opacity="0.78">
 
     <animate
       attributeName="d"
-      dur="9s"
+      dur="7s"
+      begin="0.8s"
       repeatCount="indefinite"
+      calcMode="spline"
+      keyTimes="0;0.25;0.5;0.75;1"
+      keySplines="
+        0.42 0 0.58 1;
+        0.42 0 0.58 1;
+        0.42 0 0.58 1;
+        0.42 0 0.58 1"
       values="
-      M0 145 C120 115 210 170 330 140 C450 110 550 110 670 145 C790 180 890 160 1000 130 C1100 105 1150 120 1200 140;
-      M0 145 C120 175 210 110 330 150 C450 180 550 160 670 125 C790 95 890 120 1000 150 C1100 175 1150 110 1200 145;
-      M0 145 C120 115 210 170 330 140 C450 110 550 110 670 145 C790 180 890 160 1000 130 C1100 105 1150 120 1200 140"/>
+
+      M-100 220
+      C40 195 150 160 270 165
+      C390 170 450 185 570 170
+      C690 155 770 125 890 130
+      C1010 135 1090 160 1300 105;
+
+      M-100 220
+      C40 192 150 164 270 158
+      C390 151 450 176 570 178
+      C690 180 770 140 890 118
+      C1010 100 1090 158 1300 105;
+
+      M-100 220
+      C40 198 150 157 270 171
+      C390 186 450 181 570 153
+      C690 125 770 118 890 143
+      C1010 167 1090 151 1300 105;
+
+      M-100 220
+      C40 194 150 162 270 166
+      C390 171 450 184 570 169
+      C690 154 770 126 890 131
+      C1010 136 1090 161 1300 105;
+
+      M-100 220
+      C40 195 150 160 270 165
+      C390 170 450 185 570 170
+      C690 155 770 125 890 130
+      C1010 135 1090 160 1300 105"/>
+
   </path>
 
 
-  <!-- ================================================= -->
-  <!-- MOVING LIGHT POINTS -->
-  <!-- ================================================= -->
+  <!-- ============================================== -->
+  <!-- CYAN BALL GLOW -->
+  <!-- ============================================== -->
 
-  <circle r="3" fill="#7DEBFF">
+  <circle r="5"
+          fill="#7DEBFF"
+          opacity="0.16"
+          filter="url(#smallBallGlow)">
 
-    <animateMotion
-      dur="5s"
-      repeatCount="indefinite"
-      path="M0 105 C130 70 200 135 330 105 C460 75 520 75 650 110 C780 145 850 130 980 95 C1080 70 1140 80 1200 105"/>
+    <animate
+      attributeName="cx"
+      values="-20;120;270;420;570;720;870;1020;1170;1220"
+      dur="10s"
+      repeatCount="indefinite"/>
+
+    <animate
+      attributeName="cy"
+      values="205;176;145;155;155;142;115;110;115;90"
+      dur="10s"
+      repeatCount="indefinite"/>
+
   </circle>
 
-  <circle r="2.5" fill="#8C7CFF">
 
-    <animateMotion
-      dur="7s"
-      repeatCount="indefinite"
-      path="M1200 125 C1100 145 1150 135 1020 125 C900 95 810 85 680 120 C550 155 480 160 350 125 C220 90 140 155 0 125"/>
+  <!-- ============================================== -->
+  <!-- CYAN BALL -->
+  <!-- ============================================== -->
+
+  <circle r="3"
+          fill="#7DEBFF">
+
+    <animate
+      attributeName="cx"
+      values="-20;120;270;420;570;720;870;1020;1170;1220"
+      dur="10s"
+      repeatCount="indefinite"/>
+
+    <animate
+      attributeName="cy"
+      values="205;176;145;155;155;142;115;110;115;90"
+      dur="10s"
+      repeatCount="indefinite"/>
+
   </circle>
 
 
-  <!-- ================================================= -->
+  <!-- ============================================== -->
+  <!-- SECOND CYAN BALL GLOW -->
+  <!-- ============================================== -->
+
+  <circle r="4.2"
+          fill="#4DDFFF"
+          opacity="0.13"
+          filter="url(#smallBallGlow)">
+
+    <animate
+      attributeName="cx"
+      values="-20;120;270;420;570;720;870;1020;1170;1220"
+      dur="10s"
+      begin="5s"
+      repeatCount="indefinite"/>
+
+    <animate
+      attributeName="cy"
+      values="220;195;165;170;170;155;130;125;130;105"
+      dur="10s"
+      begin="5s"
+      repeatCount="indefinite"/>
+
+  </circle>
+
+
+  <!-- ============================================== -->
+  <!-- SECOND CYAN BALL -->
+  <!-- ============================================== -->
+
+  <circle r="2.4"
+          fill="#4DDFFF"
+          opacity="0.8">
+
+    <animate
+      attributeName="cx"
+      values="-20;120;270;420;570;720;870;1020;1170;1220"
+      dur="10s"
+      begin="5s"
+      repeatCount="indefinite"/>
+
+    <animate
+      attributeName="cy"
+      values="220;195;165;170;170;155;130;125;130;105"
+      dur="10s"
+      begin="5s"
+      repeatCount="indefinite"/>
+
+  </circle>
+
+
+  <!-- ============================================== -->
+  <!-- ORANGE BALL GLOW -->
+  <!-- ============================================== -->
+
+  <circle r="5"
+          fill="#FF9A68"
+          opacity="0.14"
+          filter="url(#smallBallGlow)">
+
+    <animate
+      attributeName="cx"
+      values="-20;100;250;400;560;720;880;1030;1170;1220"
+      dur="11s"
+      repeatCount="indefinite"/>
+
+    <animate
+      attributeName="cy"
+      values="220;190;165;160;170;150;125;105;98;60"
+      dur="11s"
+      repeatCount="indefinite"/>
+
+  </circle>
+
+
+  <!-- ============================================== -->
+  <!-- ORANGE BALL -->
+  <!-- ============================================== -->
+
+  <circle r="3"
+          fill="#FF9A68">
+
+    <animate
+      attributeName="cx"
+      values="-20;100;250;400;560;720;880;1030;1170;1220"
+      dur="11s"
+      repeatCount="indefinite"/>
+
+    <animate
+      attributeName="cy"
+      values="220;190;165;160;170;150;125;105;98;60"
+      dur="11s"
+      repeatCount="indefinite"/>
+
+  </circle>
+
+
+  <!-- ============================================== -->
   <!-- TEXT -->
-  <!-- ================================================= -->
+  <!-- ============================================== -->
 
   <text
     x="75"
-    y="92"
-    fill="white"
+    y="208"
+    fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
     font-size="38"
     font-weight="600">
     Amina Saaidia
   </text>
 
+
   <text
     x="78"
-    y="120"
+    y="234"
     fill="#BFD3FF"
     font-family="Arial, Helvetica, sans-serif"
     font-size="15"
-    letter-spacing="1.2">
+    letter-spacing="1">
     PROCESS ENGINEERING · APPLIED AI
   </text>
 
+
+  <!-- ============================================== -->
+  <!-- UNDERLINE -->
+  <!-- STATIONARY -->
+  <!-- ============================================== -->
+
   <rect
     x="78"
-    y="137"
+    y="244"
     width="55"
     height="2"
     rx="1"
