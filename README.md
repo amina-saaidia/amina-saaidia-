@@ -3,7 +3,7 @@
 </p>
 ### Hi, I'm Amina 👋
 
-Process Engineering graduate → M1 in Refining, building Python and AI skills to apply to industrial process problems: predictive maintenance, anomaly detection, and process optimization.
+Process Engineering graduate → M2 in Refining, building Python and AI skills to apply to industrial process problems: predictive maintenance, anomaly detection, and process optimization.
 
 - 🔬 Background in refineries and gas treatment units (multiple internships)
 - 🧠 Currently learning: Python for data science, applied ML fundamentals
